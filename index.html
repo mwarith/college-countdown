@@ -1,62 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>College Graduation Countdown</title>
-  <style>
-    /* Reset and base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #121212; /* dark background */
-      color: #E0E0E0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-      padding: 20px;
-    }
-    .container {
-      background: #1F1B24; /* slightly lighter dark */
-      padding: 50px 70px;
-      border-radius: 20px;
-      max-width: 400px;
-      box-shadow: 0 0 30px rgba(0, 172, 255, 0.6);
-    }
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 35px;
-      letter-spacing: 1.6px;
-      font-weight: 700;
-      color: #00BFFF; /* Deep sky blue accent */
-      text-shadow: 0 0 8px #00BFFF;
-    }
-    #countdown {
-      font-size: 5.2rem;
-      font-weight: 900;
-      letter-spacing: 3px;
-      margin-bottom: 25px;
-      font-family: 'Courier New', Courier, monospace;
-      color: #00FFFF; /* cyan accent */
-      text-shadow: 0 0 10px #00FFFF;
-    }
-    p {
-      font-size: 1.2rem;
-      font-weight: 500;
-      opacity: 0.8;
-      color: #A0A0A0;
-    }
-  </style>
+  <title>Graduation Countdown</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="container">
-    <h1>Days Left Until Graduation</h1>
+    <h1>Days Until Graduation</h1>
     <div id="countdown">Loading...</div>
     <p>Keep pushing forward! 🎓</p>
   </div>
@@ -74,11 +26,11 @@
       }
 
       const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
-      document.getElementById('countdown').textContent = daysLeft + ' day' + (daysLeft > 1 ? 's' : '') + ' left';
+      document.getElementById('countdown').textContent = `${daysLeft} day${daysLeft > 1 ? 's' : ''} left`;
     }
 
     updateCountdown();
-    setInterval(updateCountdown, 1000 * 60 * 60); // Update every hour
+    setInterval(updateCountdown, 3600000); // every hour
   </script>
 </body>
 </html>
