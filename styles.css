@@ -1,0 +1,71 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Container */
+.container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  padding: 40px 30px;
+  border-radius: 20px;
+  max-width: 90%;
+  width: 400px;
+  box-shadow: 0 8px 30px rgba(0, 172, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+/* Heading */
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #00bcd4;
+  text-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+}
+
+/* Countdown text */
+#countdown {
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  color: #76ff03;
+  margin-bottom: 20px;
+  text-shadow: 0 0 12px #76ff03;
+}
+
+/* Motivational text */
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #cccccc;
+  opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  #countdown {
+    font-size: 3rem;
+  }
+
+  .container {
+    padding: 30px 20px;
+  }
+}
