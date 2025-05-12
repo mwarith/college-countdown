@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>College Countdown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        #countdown {
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Days Left Until Graduation</h1>
+    <div id="countdown">Loading...</div>
+
+    <script>
+        function updateCountdown() {
+            const graduationDate = new Date('July 1, 2026 00:00:00');
+            const today = new Date();
+
+            // Calculate difference in milliseconds
+            const diff = graduationDate - today;
+
+            if (diff <= 0) {
+                document.getElementById('countdown').textContent = 'Congratulations! You graduated!';
+                return;
+            }
+
+            // Convert milliseconds to days
+            const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
+            document.getElementById('countdown').textContent = daysLeft + ' day' + (daysLeft > 1 ? 's' : '') + ' left';
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000 * 60 * 60); // Update every hour
+    </script>
+</body>
+
+</html>
