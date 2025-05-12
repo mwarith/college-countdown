@@ -1,55 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>College Countdown</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 100px;
-            background-color: #f0f4f8;
-            color: #333;
-        }
-
-        #countdown {
-            font-size: 48px;
-            font-weight: bold;
-        }
-
-        h1 {
-            margin-bottom: 20px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>College Graduation Countdown</title>
+  <style>
+    /* Reset and base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    .container {
+      background: rgba(0,0,0,0.4);
+      padding: 40px 60px;
+      border-radius: 15px;
+      max-width: 400px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+    }
+    #countdown {
+      font-size: 5rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    p {
+      font-size: 1.1rem;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+  </style>
 </head>
-
 <body>
+  <div class="container">
     <h1>Days Left Until Graduation</h1>
     <div id="countdown">Loading...</div>
+    <p>Keep pushing forward! 🎓</p>
+  </div>
 
-    <script>
-        function updateCountdown() {
-            const graduationDate = new Date('July 1, 2026 00:00:00');
-            const today = new Date();
+  <script>
+    function updateCountdown() {
+      const graduationDate = new Date('July 1, 2026 00:00:00');
+      const today = new Date();
 
-            // Calculate difference in milliseconds
-            const diff = graduationDate - today;
+      const diff = graduationDate - today;
 
-            if (diff <= 0) {
-                document.getElementById('countdown').textContent = 'Congratulations! You graduated!';
-                return;
-            }
+      if (diff <= 0) {
+        document.getElementById('countdown').textContent = '🎉 Graduated! 🎉';
+        return;
+      }
 
-            // Convert milliseconds to days
-            const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
-            document.getElementById('countdown').textContent = daysLeft + ' day' + (daysLeft > 1 ? 's' : '') + ' left';
-        }
+      const daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
+      document.getElementById('countdown').textContent = daysLeft + ' day' + (daysLeft > 1 ? 's' : '') + ' left';
+    }
 
-        updateCountdown();
-        setInterval(updateCountdown, 1000 * 60 * 60); // Update every hour
-    </script>
+    updateCountdown();
+    setInterval(updateCountdown, 1000 * 60 * 60); // Update every hour
+  </script>
 </body>
-
 </html>
