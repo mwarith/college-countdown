@@ -11,6 +11,13 @@
 <body>
   <div class="container">
     <h1>Time Until Graduation</h1>
+
+    <select id="gradYear" onchange="updateTargetDate()">
+      <option value="2026">2026</option>
+      <option value="2027">2027</option>
+      <option value="2028">2028</option>
+    </select>
+
     <div id="countdown">
       <div><span id="days">--</span><label>Days</label></div>
       <div><span id="hours">--</span><label>Hours</label></div>

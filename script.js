@@ -1,4 +1,11 @@
-const graduationDate = new Date('July 1, 2026 00:00:00');
+let graduationDate = new Date('July 1, 2026 00:00:00');
+
+function updateTargetDate() {
+    const selectedYear = document.getElementById('gradYear').value;
+    graduationDate = new Date(`${selectedYear}-07-01T00:00:00`);
+    updateCountdown();
+}
+
 function updateCountdown() {
     const now = new Date();
     const diff = graduationDate - now;
@@ -20,5 +27,6 @@ function updateCountdown() {
     document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
 }
 
+// Initial setup
 updateCountdown();
 setInterval(updateCountdown, 1000);
