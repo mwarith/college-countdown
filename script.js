@@ -31,13 +31,13 @@ function updateCountdown() {
 }
 
 // Initialize date on page load
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Set default selected year to the first option
     updateTargetDate();
-    
+
     // Set up the event listener
     document.getElementById('gradYear').addEventListener('change', updateTargetDate);
-    
+
     // Update countdown every second
     setInterval(updateCountdown, 1000);
 });
