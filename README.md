@@ -15,8 +15,6 @@ Easily customize your target date and stay motivated as you prepare for your nex
    ```bash
    git clone https://github.com/yourusername/college-countdown.git
    ```
-2. Follow the setup instructions in the [INSTALL.md](INSTALL.md) file.
-
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
