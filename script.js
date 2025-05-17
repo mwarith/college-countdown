@@ -1,5 +1,5 @@
+const graduationDate = new Date('July 1, 2026 00:00:00');
 function updateCountdown() {
-    const graduationDate = new Date('July 1, 2026 00:00:00');
     const now = new Date();
     const diff = graduationDate - now;
 
