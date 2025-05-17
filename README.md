@@ -15,12 +15,11 @@ Easily customize your target date and stay motivated as you prepare for your nex
    ```bash
    git clone https://github.com/yourusername/college-countdown.git
    ```
-2. Follow the setup instructions in the [INSTALL.md](INSTALL.md) file.
 
-## Contributing
+## Try It Out
 
-Contributions are welcome! Please open an issue or submit a pull request.
+You can test the website live at [https://college-countdown.netlify.app/](https://college-countdown.netlify.app/).
 
-## License
+---
 
-This project is licensed under the MIT License.
+**Made by MWarith**
