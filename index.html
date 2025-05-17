@@ -6,17 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Graduation Countdown</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
   <div class="container">
-    <h1>Time Until Graduation</h1>
+    <h1>Time Until Graduation <i class="fas fa-graduation-cap"></i></h1>
 
-    <select id="gradYear" onchange="updateTargetDate()">
-      <option value="2026">2026</option>
-      <option value="2027">2027</option>
-      <option value="2028">2028</option>
-    </select>
+    <div class="select-wrapper">
+      <label for="gradYear" id="gradYearText">Graduation Year:</label>
+      <select id="gradYear">
+        <option value="2026" selected>2026</option>
+        <option value="2027">2027</option>
+        <option value="2028">2028</option>
+      </select>
+    </div>
 
     <div id="countdown">
       <div><span id="days">--</span><label>Days</label></div>

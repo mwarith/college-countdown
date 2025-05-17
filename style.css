@@ -13,78 +13,226 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  background-image: radial-gradient(circle at 10% 20%, rgba(0, 172, 255, 0.05) 0%, transparent 70%);
 }
 
 .container {
   background: #1F1B24;
-  padding: 40px;
-  border-radius: 20px;
-  max-width: 600px;
+  padding: 50px;
+  border-radius: 25px;
+  max-width: 650px;
   width: 100%;
   text-align: center;
-  box-shadow: 0 0 25px rgba(0, 172, 255, 0.3);
+  box-shadow: 0 0 35px rgba(0, 172, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 191, 255, 0.1);
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(0, 172, 255, 0.4);
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, transparent, #00BFFF, transparent);
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: #00BFFF;
-  margin-bottom: 30px;
-  text-shadow: 0 0 8px #00BFFF;
+  margin-bottom: 35px;
+  text-shadow: 0 0 12px rgba(0, 191, 255, 0.6);
+  letter-spacing: 1px;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.5), transparent);
 }
 
 #countdown {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 25px;
   font-family: 'Courier New', Courier, monospace;
-  margin-bottom: 25px;
+  margin: 40px 0 30px;
 }
 
 #countdown div {
-  flex: 1 1 100px;
+  flex: 1 1 120px;
   background: #2A2A2A;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 25px 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+#countdown div:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 255, 255, 0.25);
+}
+
+#countdown div::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #00FFFF;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+#countdown div:hover::after {
+  transform: scaleX(1);
 }
 
 #countdown span {
   display: block;
-  font-size: 2.8rem;
+  font-size: 3.2rem;
   font-weight: bold;
   color: #00FFFF;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
 }
 
 #countdown label {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #A0A0A0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
 }
 
-p {
-  font-size: 1.2rem;
-  color: #AAA;
+.select-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 40px;
+  margin-top: 10px;
+  padding: 10px 15px;
+  border-radius: 16px;
+  background: rgba(31, 27, 36, 0.8);
+  border: 1px solid rgba(0, 191, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
+#gradYearText {
+  font-size: 1.1rem;
+  margin-right: 15px;
+  color: #A0A0A0;
+  font-weight: 500;
+}
 
 select {
-  background: #2A2A2A;
-  color: #00FFFF;
-  font-size: 1rem;
-  padding: 10px 15px;
-  border: 2px solid #00BFFF;
-  border-radius: 8px;
-  outline: none;
-  margin-bottom: 30px;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
-  transition: 0.3s ease;
   appearance: none;
-  text-align: center;
+  background: #252229;
+  color: #00FFFF;
+  font-size: 1.2rem;
+  padding: 8px 35px 8px 15px;
+  border: 1px solid rgba(0, 191, 255, 0.4);
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 191, 255, 0.2);
+  text-align-last: center;
+}
+
+.select-wrapper::after {
+  content: '\f107';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #00BFFF;
+  pointer-events: none;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.select-wrapper:hover::after {
+  transform: translateY(-50%) rotate(180deg);
 }
 
 select:hover,
 select:focus {
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
   border-color: #00FFFF;
+  background: #2A2A2A;
+}
+
+select:hover,
+select:focus {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  border-color: #00FFFF;
+}
+
+.graduated {
+  font-size: 2.5rem;
+  color: #00FFFF;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+  font-weight: bold;
+  animation: pulse 1.5s infinite alternate;
+  padding: 20px;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 30px 20px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  #countdown span {
+    font-size: 2.5rem;
+  }
+  
+  #countdown div {
+    flex: 1 1 100px;
+    padding: 15px 10px;
+  }
+  
+  .select-wrapper {
+    padding: 10px 15px;
+  }
 }
