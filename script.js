@@ -1,8 +1,11 @@
+// Initialize graduation date
 let graduationDate;
 
+// Function to update the target graduation date
 function updateTargetDate() {
     const year = document.getElementById('gradYear').value;
-    graduationDate = new Date(year, 6, 1, 10, 0, 0); // Month is 0-indexed, so 4 = May
+    // Set graduation date to July 1st of the selected year
+    graduationDate = new Date(year, 6, 1, 10, 0, 0); // Month is 0-indexed, so 6 = July
     updateCountdown();
 }
 
@@ -27,8 +30,14 @@ function updateCountdown() {
     document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+// Initialize date on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Set default selected year to the first option
     updateTargetDate();
+    
+    // Set up the event listener
     document.getElementById('gradYear').addEventListener('change', updateTargetDate);
+    
+    // Update countdown every second
     setInterval(updateCountdown, 1000);
 });

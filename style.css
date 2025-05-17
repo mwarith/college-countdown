@@ -1,4 +1,12 @@
-* {
+.date-note {
+  color: #A0A0A0;
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+  margin-top: -25px;
+  font-style: italic;
+  opacity: 0.8;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
