@@ -5,21 +5,22 @@ Easily customize your target date and stay motivated as you prepare for your nex
 
 ## Features
 
-- Set your own college start date
+- Set your own college end date
 - Live countdown display
 - Minimal and easy-to-use interface
 
-## Getting Started
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/college-countdown.git
-   ```
 
 ## Try It Out
 
 You can test the website live at [https://college-countdown.netlify.app/](https://college-countdown.netlify.app/).
 
+## If you want the code locally:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/mwarith/college-countdown.git
+   ```
+   
 ---
 
 **Made by MWarith**
