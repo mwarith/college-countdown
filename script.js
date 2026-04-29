@@ -2,7 +2,7 @@ let graduationDate;
 
 function updateTargetDate() {
     const year = document.getElementById('gradYear').value;
-    graduationDate = new Date(year, 5, 9, 12, 0, 0); // Month is 0-indexed, so 6 = July
+    graduationDate = new Date(year, 5, 14, 12, 0, 0); // Month is 0-indexed, so 6 = July
     updateCountdown();
 }
 
