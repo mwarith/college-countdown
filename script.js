@@ -20,10 +20,15 @@ function clearCache() {
 }
 
 function updateTargetDate() {
+<<<<<<< HEAD
     const dateStr = document.getElementById('gradDate').value;
     const [year, month, day] = dateStr.split('-');
     graduationDate = new Date(year, month - 1, day, 12, 0, 0); // Month is 0-indexed
     saveGraduationDate(dateStr); // Save to cache whenever date changes
+=======
+    const year = document.getElementById('gradYear').value;
+    graduationDate = new Date(year, 5, 14, 12, 0, 0); // Month is 0-indexed, so 6 = July
+>>>>>>> 218e285bda1b4963588b0f74fe9f2e339452e1f2
     updateCountdown();
 }
 
