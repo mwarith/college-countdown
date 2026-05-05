@@ -1,8 +1,29 @@
 let graduationDate;
+const CACHE_KEY = 'graduationDate';
+const DEFAULT_DATE = '2026-06-09'; // Default: June 9, 2026
+
+// Save date to localStorage
+function saveGraduationDate(dateStr) {
+    localStorage.setItem(CACHE_KEY, dateStr);
+}
+
+// Load date from localStorage
+function loadGraduationDate() {
+    return localStorage.getItem(CACHE_KEY) || DEFAULT_DATE;
+}
+
+// Clear cache and reset to default
+function clearCache() {
+    localStorage.removeItem(CACHE_KEY);
+    document.getElementById('gradDate').value = DEFAULT_DATE;
+    updateTargetDate();
+}
 
 function updateTargetDate() {
-    const year = document.getElementById('gradYear').value;
-    graduationDate = new Date(year, 5, 9, 12, 0, 0); // Month is 0-indexed, so 6 = July
+    const dateStr = document.getElementById('gradDate').value;
+    const [year, month, day] = dateStr.split('-');
+    graduationDate = new Date(year, month - 1, day, 12, 0, 0); // Month is 0-indexed
+    saveGraduationDate(dateStr); // Save to cache whenever date changes
     updateCountdown();
 }
 
@@ -27,7 +48,12 @@ function updateCountdown() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    // Load saved date or use default
+    const savedDate = loadGraduationDate();
+    document.getElementById('gradDate').value = savedDate;
+
     updateTargetDate();
-    document.getElementById('gradYear').addEventListener('change', updateTargetDate);
+    document.getElementById('gradDate').addEventListener('change', updateTargetDate);
+    document.getElementById('clearCache').addEventListener('click', clearCache);
     setInterval(updateCountdown, 1000);
 });
