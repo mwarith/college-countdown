@@ -1,6 +1,6 @@
 let graduationDate;
 const CACHE_KEY = 'graduationDate';
-const DEFAULT_DATE = '2026-06-09'; // Default: June 9, 2026
+const DEFAULT_DATE = '2026-06-14'; // Default: June 9, 2026
 
 // Save date to localStorage
 function saveGraduationDate(dateStr) {
